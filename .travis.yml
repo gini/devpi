@@ -2,7 +2,7 @@ language: bash
 services: docker
 
 env:
-  - VERSION=4.4.0 PYTHON_VERSION=3.6-slim
+  - VERSION=4.4.0 PYTHON_VERSION=3.6
 
 script: 
   - ./scripts/build.sh
