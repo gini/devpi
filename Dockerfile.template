@@ -1,0 +1,20 @@
+FROM python:PYTHON_VERSION-slim
+LABEL MAINTAINER "Gini" <tech@gini.net>
+
+# Copy over scripts
+COPY ./requirements.txt /
+COPY ./entrypoint.sh /
+
+# Install devpi dependencies
+RUN pip install -r /requirements.txt
+
+EXPOSE 3141
+
+VOLUME /srv/devpi
+
+ENV DEVPI_SERVER_ROOT=/srv/devpi
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["devpi-server"]
+

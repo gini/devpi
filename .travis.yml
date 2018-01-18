@@ -1,0 +1,19 @@
+language: bash
+services: docker
+
+env:
+  - VERSION=4.4.0 PYTHON_VERSION=3.6-slim
+
+script: 
+  - ./scripts/build.sh
+
+deploy:
+  - provider: script
+    script: ./scripts/push.sh
+    skip_cleanup: true 
+    on:
+      branch: master
+
+branches:
+  only:
+    - master 
