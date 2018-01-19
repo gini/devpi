@@ -15,6 +15,3 @@ VOLUME /srv/devpi
 ENV DEVPI_SERVER_ROOT=/srv/devpi
 
 ENTRYPOINT ["/entrypoint.sh"]
-
-CMD ["devpi-server"]
-
