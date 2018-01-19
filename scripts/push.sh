@@ -10,3 +10,5 @@ docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
 docker push gini/devpi:$VERSION
 
+docker tag gini/devpi:$VERSION gini/devpi:latest
+docker push gini/devpi:latest
