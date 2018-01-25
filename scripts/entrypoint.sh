@@ -29,10 +29,6 @@ elif [ -z "$DEVPI_ROOT_PASSWORD" ]; then
     DEVPI_ROOT_PASSWORD=$(generate_password)
 fi
 
-if [ -z "$SERVER_NAME" ] ; then
-    SERVER_NAME="http://localhost:3141"
-fi
-
 if [ ! -d "$DEVPI_SERVER_ROOT" ]; then
     echo "ENTRYPOINT: Creating devpi-server root"
     mkdir -p "$DEVPI_SERVER_ROOT"
